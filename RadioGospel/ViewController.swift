@@ -11,10 +11,32 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    var playerItem: AVPlayer!
+    private let url = "http://m1.fabricahost.com.br:8706/;stream.mp3"
+    var player: AVPlayer!
+    var toggleState = 1
     
     @IBAction func playButton(sender: UIButton) {
+        let playB = sender as UIButton
         
+        testConnection()
+        playBackground()
+        
+        if toggleState == 1 {
+            player = AVPlayer(URL:NSURL(string:url)!)
+            player.play()
+            toggleState = 2
+            playB.setImage(UIImage(named: "pauseIMG.jpeg"), forState: UIControlState.Normal)
+        } else {
+            player.pause()
+            toggleState = 1
+            playB.setImage(UIImage(named: "playIMG.jpg"), forState: UIControlState.Normal)
+        }
+        
+        
+    }
+    
+ 
+    func testConnection() {
         if Reachability.isConnectedToNetwork() == true {
             print("Internet connection OK")
         } else {
@@ -23,7 +45,9 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        
+    }
+    
+    func playBackground() {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             print("AVAudioSession Category Playback OK")
@@ -37,18 +61,7 @@ class ViewController: UIViewController {
             print(error.localizedDescription)
         }
         
-        
-        let url = "http://m1.fabricahost.com.br:8706/;stream.mp3"
-        playerItem = AVPlayer(URL:NSURL(string:url)!)
-        playerItem.play()
-        print("Tocando")
     }
-    
-    @IBAction func stopButton(sender: UIButton) {
-        playerItem.pause()
-    }
-    
-    
     
 }
     
