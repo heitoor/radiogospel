@@ -24,6 +24,20 @@ class ViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            print("AVAudioSession Category Playback OK")
+            do {
+                try AVAudioSession.sharedInstance().setActive(true)
+                print("AVAudioSession is Active")
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        
         let url = "http://m1.fabricahost.com.br:8706/;stream.mp3"
         playerItem = AVPlayer(URL:NSURL(string:url)!)
         playerItem.play()
@@ -34,5 +48,8 @@ class ViewController: UIViewController {
         playerItem.pause()
     }
     
-
+    
+    
 }
+    
+
