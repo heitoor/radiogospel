@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		361B0EF21C6A233B00C02C97 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B0EF11C6A233B00C02C97 /* Reachability.swift */; };
 		36B919951C66A59500608FAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B919941C66A59500608FAE /* AppDelegate.swift */; };
 		36B919971C66A59500608FAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B919961C66A59500608FAE /* ViewController.swift */; };
 		36B9199A1C66A59500608FAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B919981C66A59500608FAE /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		361B0EF11C6A233B00C02C97 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		36B919911C66A59500608FAE /* RadioGospel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioGospel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B919941C66A59500608FAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36B919961C66A59500608FAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				36B919941C66A59500608FAE /* AppDelegate.swift */,
 				36B919961C66A59500608FAE /* ViewController.swift */,
+				361B0EF11C6A233B00C02C97 /* Reachability.swift */,
 				36B919981C66A59500608FAE /* Main.storyboard */,
 				36B9199B1C66A59500608FAE /* Assets.xcassets */,
 				36B9199D1C66A59500608FAE /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				36B919971C66A59500608FAE /* ViewController.swift in Sources */,
 				36B919951C66A59500608FAE /* AppDelegate.swift in Sources */,
+				361B0EF21C6A233B00C02C97 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +288,7 @@
 				36B919A51C66A59500608FAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
